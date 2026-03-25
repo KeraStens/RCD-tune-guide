@@ -30,7 +30,6 @@
     min-height: 100vh;
   }
 
-  /* HEADER */
   .header {
     background: var(--surface);
     border-bottom: 1px solid var(--border);
@@ -63,10 +62,8 @@
     margin-top: 6px;
   }
 
-  /* MAIN */
   .main { max-width: 680px; margin: 0 auto; padding: 28px 24px 60px; }
 
-  /* SECTION */
   .section { margin-bottom: 32px; }
   .section-label {
     font-family: 'Barlow Condensed', sans-serif;
@@ -80,7 +77,6 @@
     margin-bottom: 10px;
   }
 
-  /* SETTING ROW */
   .row {
     display: flex;
     align-items: center;
@@ -113,7 +109,6 @@
   .row-desc { font-size: 12px; color: var(--muted); margin-top: 2px; }
   .row-arrow { color: var(--muted); font-size: 20px; flex-shrink: 0; }
 
-  /* MODAL OVERLAY */
   .overlay {
     display: none;
     position: fixed;
@@ -127,7 +122,6 @@
   }
   .overlay.open { display: flex; }
 
-  /* MODAL */
   .modal {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -180,7 +174,6 @@
 
   .modal-body { padding: 20px; }
 
-  /* DIAGRAM */
   .diagram {
     background: var(--surface2);
     border: 1px solid var(--border);
@@ -191,61 +184,6 @@
     justify-content: center;
   }
 
-  /* SCALE BAR */
-  .scale-section { margin-bottom: 18px; }
-  .scale-label {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--muted);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-  .scale-bar {
-    position: relative;
-    height: 28px;
-    background: var(--surface2);
-    border-radius: 6px;
-    border: 1px solid var(--border);
-    overflow: hidden;
-    display: flex;
-  }
-  .scale-neg {
-    background: linear-gradient(90deg, #1a3a6b, #2a5298);
-    flex: 1;
-    display: flex;
-    align-items: center;
-    padding-left: 10px;
-    font-size: 11px;
-    font-weight: 600;
-    color: #7ab8ff;
-  }
-  .scale-mid {
-    background: var(--border);
-    width: 2px;
-  }
-  .scale-pos {
-    background: linear-gradient(90deg, #6b2a1a, #984020);
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: 10px;
-    font-size: 11px;
-    font-weight: 600;
-    color: #ffaa80;
-  }
-  .scale-center {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background: var(--text);
-    width: 3px;
-    height: 100%;
-  }
-
-  /* EFFECT CARDS */
   .effects { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
   .effect {
     padding: 14px 16px;
@@ -267,7 +205,6 @@
   .effect.green .effect-title { color: var(--green); }
   .effect-desc { font-size: 13px; line-height: 1.55; color: #b0b8cc; }
 
-  /* TIP */
   .tip {
     background: #1a1500;
     border: 1px solid #3a2e00;
@@ -279,7 +216,6 @@
   }
   .tip strong { color: var(--yellow); font-weight: 600; }
 
-  /* FOOTER */
   .footer {
     text-align: center;
     padding: 20px;
@@ -496,7 +432,7 @@
 </div>
 
 <div class="footer">
-  Made for beginners · All settings explained · Open in any browser
+  Made for beginners · Updated with dev feedback · Open in any browser
 </div>
 
 <!-- MODAL -->
@@ -527,11 +463,12 @@ var settings = {
     iconSvg: '<svg width="26" height="26" viewBox="0 0 22 22"><rect x="9" y="1" width="5" height="18" rx="2" fill="#4a9eff" transform="rotate(-9 11 10)"/><line x1="11" y1="1" x2="11" y2="21" stroke="#2a5298" stroke-width="1" stroke-dasharray="3,2"/></svg>',
     diagram: '<svg width="320" height="110" viewBox="0 0 320 110"><rect x="0" y="0" width="320" height="110" fill="transparent"/><text x="42" y="16" font-size="11" fill="#4a9eff" font-family="Barlow Condensed,sans-serif" font-weight="700">NEGATIVE (–)</text><rect x="48" y="22" width="14" height="65" rx="3" fill="#4a9eff" transform="rotate(-10 55 54)"/><line x1="55" y1="18" x2="55" y2="92" stroke="#2a3a5a" stroke-width="1" stroke-dasharray="3,2"/><text x="130" y="16" font-size="11" fill="#7a7f8e" font-family="Barlow Condensed,sans-serif" font-weight="700">NEUTRAL</text><rect x="150" y="22" width="14" height="65" rx="3" fill="#555"/><line x1="157" y1="18" x2="157" y2="92" stroke="#2a3a5a" stroke-width="1" stroke-dasharray="3,2"/><text x="218" y="16" font-size="11" fill="#ff6b35" font-family="Barlow Condensed,sans-serif" font-weight="700">POSITIVE (+)</text><rect x="248" y="22" width="14" height="65" rx="3" fill="#ff6b35" transform="rotate(10 255 54)"/><line x1="255" y1="18" x2="255" y2="92" stroke="#3a2a1a" stroke-width="1" stroke-dasharray="3,2"/><rect x="20" y="90" width="280" height="8" rx="3" fill="#333"/></svg>',
     effects: [
-      { cls:'blue', title:'More negative (–1.0 to –2.5)', desc:'The top of the wheel tilts inward. Keeps the tyre flat against the road when the car rolls in a corner. More grip through turns. High-downforce cars often run –1.5 to –2.0.' },
-      { cls:'orange', title:'Too positive or near zero', desc:'The tyre contact patch tilts away in corners. You lose front grip, the car pushes wide (understeer). The inside edge of the tyre wears fast. Avoid positive values on track cars.' }
+      { cls:'blue', title:'More negative (–1.0 to –2.5)', desc:'The top of the wheel tilts inward. Keeps the tyre flat against the road when the car rolls in a corner. More grip through turns.' },
+      { cls:'orange', title:'Too positive or near zero', desc:'The tyre contact patch tilts away in corners. You lose front grip, the car pushes wide (understeer).' }
     ],
     tip: '<strong>Beginner tip:</strong> Start at –1.0 to –1.5. If the car understeers in corners, try –1.75. Going past –2.5 hurts braking more than it helps cornering.'
   },
+
   camber_r: {
     title: "Rear Camber",
     sub: "Alignment — rear axle",
@@ -539,166 +476,170 @@ var settings = {
     iconSvg: '<svg width="26" height="26" viewBox="0 0 22 22"><rect x="9" y="1" width="5" height="18" rx="2" fill="#4a9eff" transform="rotate(-5 11 10)"/><line x1="11" y1="1" x2="11" y2="21" stroke="#2a5298" stroke-width="1" stroke-dasharray="3,2"/></svg>',
     diagram: '<svg width="320" height="110" viewBox="0 0 320 110"><text x="42" y="16" font-size="11" fill="#4a9eff" font-family="Barlow Condensed,sans-serif" font-weight="700">NEGATIVE (–)</text><rect x="48" y="22" width="14" height="65" rx="3" fill="#4a9eff" transform="rotate(-6 55 54)"/><line x1="55" y1="18" x2="55" y2="92" stroke="#2a3a5a" stroke-width="1" stroke-dasharray="3,2"/><text x="130" y="16" font-size="11" fill="#7a7f8e" font-family="Barlow Condensed,sans-serif" font-weight="700">NEUTRAL</text><rect x="150" y="22" width="14" height="65" rx="3" fill="#555"/><line x1="157" y1="18" x2="157" y2="92" stroke="#2a3a5a" stroke-width="1" stroke-dasharray="3,2"/><text x="218" y="16" font-size="11" fill="#ff6b35" font-family="Barlow Condensed,sans-serif" font-weight="700">POSITIVE (+)</text><rect x="248" y="22" width="14" height="65" rx="3" fill="#ff6b35" transform="rotate(6 255 54)"/><line x1="255" y1="18" x2="255" y2="92" stroke="#3a2a1a" stroke-width="1" stroke-dasharray="3,2"/><rect x="20" y="90" width="280" height="8" rx="3" fill="#333"/></svg>',
     effects: [
-      { cls:'blue', title:'More negative (–0.5 to –1.5)', desc:'Rear tyres stay planted during body roll. The rear feels stable and predictable. High-downforce cars can run –0.8 to –1.2 to match their aero loading.' },
+      { cls:'blue', title:'More negative (–0.5 to –1.5)', desc:'Rear tyres stay planted during body roll. The rear feels stable and predictable.' },
       { cls:'orange', title:'Too much negative or any positive', desc:'Rear grip drops off. The rear can step out suddenly under power or mid-corner. Positive rear camber is almost never useful.' }
     ],
-    tip: '<strong>Beginner tip:</strong> Keep rear camber smaller than front. –0.5 to –1.0 works for most cars. Increase slightly for high-downforce builds.'
+    tip: '<strong>Beginner tip:</strong> Often best to keep rear camber at 0. When you do use it, keep it smaller than front camber (e.g. –0.5 to –1.0). Increase slightly only for high-downforce builds.'
   },
+
   caster: {
     title: "Caster",
     sub: "Alignment — steering axis tilt",
     iconClass: "ic-green",
     iconSvg: '<svg width="26" height="26" viewBox="0 0 22 22"><circle cx="11" cy="15" r="5" fill="none" stroke="#3ecf8e" stroke-width="1.8"/><line x1="11" y1="2" x2="11" y2="10" stroke="#3ecf8e" stroke-width="2.2" transform="rotate(-12 11 11)"/></svg>',
-    diagram: '<svg width="320" height="110" viewBox="0 0 320 110"><text x="20" y="16" font-size="11" fill="#ff6b35" font-family="Barlow Condensed,sans-serif" font-weight="700">LOW CASTER</text><line x1="60" y1="22" x2="60" y2="88" stroke="#ff6b35" stroke-width="3" stroke-linecap="round"/><circle cx="60" cy="82" r="10" fill="none" stroke="#ff6b35" stroke-width="1.8"/><text x="110" y="16" font-size="11" fill="#3ecf8e" font-family="Barlow Condensed,sans-serif" font-weight="700">HIGH CASTER</text><line x1="165" y1="18" x2="150" y2="88" stroke="#3ecf8e" stroke-width="3" stroke-linecap="round"/><circle cx="150" cy="82" r="10" fill="none" stroke="#3ecf8e" stroke-width="1.8"/><text x="200" y="45" font-size="12" fill="#7a7f8e" font-family="Barlow,sans-serif">→  more stability</text><text x="200" y="62" font-size="12" fill="#7a7f8e" font-family="Barlow,sans-serif">→  self-centering</text><text x="200" y="79" font-size="12" fill="#7a7f8e" font-family="Barlow,sans-serif">→  better feel</text></svg>',
+    diagram: '<svg width="320" height="110" viewBox="0 0 320 110"><text x="20" y="16" font-size="11" fill="#ff6b35" font-family="Barlow Condensed,sans-serif" font-weight="700">LOW CASTER</text><line x1="60" y1="22" x2="60" y2="88" stroke="#ff6b35" stroke-width="3" stroke-linecap="round"/><circle cx="60" cy="82" r="10" fill="none" stroke="#ff6b35" stroke-width="1.8"/><text x="110" y="16" font-size="11" fill="#3ecf8e" font-family="Barlow Condensed,sans-serif" font-weight="700">HIGH CASTER</text><line x1="165" y1="18" x2="150" y2="88" stroke="#3ecf8e" stroke-width="3" stroke-linecap="round"/><circle cx="150" cy="82" r="10" fill="none" stroke="#3ecf8e" stroke-width="1.8"/></svg>',
     effects: [
-      { cls:'blue', title:'Higher caster (5–8)', desc:'The steering axis leans back more. The car feels stable at speed, steering self-centers after corners, and straight-line tracking improves. Standard for performance cars.' },
-      { cls:'orange', title:'Lower caster (1–4)', desc:'Lighter steering but feels vague and wandery at speed. The wheel won\'t return to center on its own. Easier to turn but less confidence at high speed.' }
+      { cls:'blue', title:'Higher caster (5–8)', desc:'Slight improvement to high-speed stability and straight-line tracking.' },
+      { cls:'orange', title:'Lower caster (1–4)', desc:'Steering feels a bit lighter.' }
     ],
-    tip: '<strong>Beginner tip:</strong> 5–7 is ideal for most builds. High-downforce cars benefit from 6–8 to manage the extra forces through the steering.'
+    tip: '<strong>Beginner tip:</strong> In this game caster has very little effect on steering feel because wheels are forced by decay values. Most players leave it at default.'
   },
+
   toe: {
     title: "Toe",
     sub: "Alignment — wheel pointing direction",
     iconClass: "ic-yellow",
     iconSvg: '<svg width="26" height="26" viewBox="0 0 22 22"><rect x="2" y="7" width="5" height="12" rx="1.5" fill="#f5c518" transform="rotate(9 4.5 13)"/><rect x="15" y="7" width="5" height="12" rx="1.5" fill="#f5c518" transform="rotate(-9 17.5 13)"/></svg>',
-    diagram: '<svg width="320" height="110" viewBox="0 0 320 110"><text x="5" y="16" font-size="11" fill="#4a9eff" font-family="Barlow Condensed,sans-serif" font-weight="700">TOE-IN (+)</text><rect x="10" y="28" width="12" height="55" rx="2" fill="#4a9eff" transform="rotate(8 16 55)"/><rect x="32" y="28" width="12" height="55" rx="2" fill="#4a9eff" transform="rotate(-8 38 55)"/><text x="112" y="16" font-size="11" fill="#7a7f8e" font-family="Barlow Condensed,sans-serif" font-weight="700">NEUTRAL</text><rect x="118" y="28" width="12" height="55" rx="2" fill="#555"/><rect x="138" y="28" width="12" height="55" rx="2" fill="#555"/><text x="200" y="16" font-size="11" fill="#ff6b35" font-family="Barlow Condensed,sans-serif" font-weight="700">TOE-OUT (–)</text><rect x="210" y="28" width="12" height="55" rx="2" fill="#ff6b35" transform="rotate(-8 216 55)"/><rect x="232" y="28" width="12" height="55" rx="2" fill="#ff6b35" transform="rotate(8 238 55)"/><text x="16" y="97" font-size="10" fill="#4a9eff" font-family="Barlow,sans-serif">stable rear</text><text x="106" y="97" font-size="10" fill="#7a7f8e" font-family="Barlow,sans-serif">balanced</text><text x="198" y="97" font-size="10" fill="#ff6b35" font-family="Barlow,sans-serif">agile front</text></svg>',
+    diagram: '<svg width="320" height="110" viewBox="0 0 320 110"><text x="5" y="16" font-size="11" fill="#4a9eff" font-family="Barlow Condensed,sans-serif" font-weight="700">TOE-IN (+)</text><rect x="10" y="28" width="12" height="55" rx="2" fill="#4a9eff" transform="rotate(8 16 55)"/><rect x="32" y="28" width="12" height="55" rx="2" fill="#4a9eff" transform="rotate(-8 38 55)"/><text x="112" y="16" font-size="11" fill="#7a7f8e" font-family="Barlow Condensed,sans-serif" font-weight="700">NEUTRAL</text><rect x="118" y="28" width="12" height="55" rx="2" fill="#555"/><rect x="138" y="28" width="12" height="55" rx="2" fill="#555"/><text x="200" y="16" font-size="11" fill="#ff6b35" font-family="Barlow Condensed,sans-serif" font-weight="700">TOE-OUT (–)</text><rect x="210" y="28" width="12" height="55" rx="2" fill="#ff6b35" transform="rotate(-8 216 55)"/><rect x="232" y="28" width="12" height="55" rx="2" fill="#ff6b35" transform="rotate(8 238 55)"/></svg>',
     effects: [
-      { cls:'blue', title:'Toe-in on rear (+ value)', desc:'Rear wheels angle slightly inward. Adds straight-line stability and keeps the rear planted. Most cars run a small amount of rear toe-in (0.08–0.15) as a baseline.' },
-      { cls:'orange', title:'Toe-out on front (– value)', desc:'Front wheels angle slightly outward. Makes the car dart into corners more eagerly — good for responsiveness. Too much and the car feels nervous on straights.' }
+      { cls:'blue', title:'Toe-in on rear (+ value)', desc:'Adds a small amount of straight-line stability.' },
+      { cls:'orange', title:'Toe-out on front (– value)', desc:'Makes the car turn in more eagerly.' }
     ],
-    tip: '<strong>Beginner tip:</strong> Front toe: –0.02 to –0.06 for responsiveness. Rear toe: 0.08 to 0.15 for stability. Never go extreme on either end.'
+    tip: '<strong>Beginner tip:</strong> Toe has very little effect in this game. Most players leave both front and rear toe at 0.'
   },
+
   stiffness: {
     title: "Suspension Stiffness",
-    sub: "How hard the spring resists being compressed",
+    sub: "How much the car rolls in corners",
     iconClass: "ic-purple",
     iconSvg: '<svg width="26" height="26" viewBox="0 0 22 22"><path d="M11 2 L11 4 L7 7 L15 10 L7 13 L15 16 L11 19 L11 21" stroke="#a78bfa" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    diagram: '<svg width="320" height="120" viewBox="0 0 320 120"><text x="30" y="16" font-size="11" fill="#3ecf8e" font-family="Barlow Condensed,sans-serif" font-weight="700">SOFT</text><path d="M55 22 L55 27 L40 33 L70 40 L40 47 L70 54 L40 61 L70 68 L55 74 L55 80" stroke="#3ecf8e" stroke-width="2.2" fill="none" stroke-linecap="round"/><rect x="40" y="80" width="30" height="6" rx="1.5" fill="#3ecf8e"/><text x="165" y="16" font-size="11" fill="#ff6b35" font-family="Barlow Condensed,sans-serif" font-weight="700">STIFF</text><path d="M195 22 L195 27 L180 31 L210 35 L180 39 L210 43 L180 47 L210 51 L195 55 L195 80" stroke="#ff6b35" stroke-width="2.2" fill="none" stroke-linecap="round"/><rect x="180" y="80" width="30" height="6" rx="1.5" fill="#ff6b35"/><text x="38" y="105" font-size="10" fill="#3ecf8e" font-family="Barlow,sans-serif">absorbs bumps</text><text x="162" y="105" font-size="10" fill="#ff6b35" font-family="Barlow,sans-serif">flat platform</text></svg>',
+    diagram: '<svg width="320" height="120" viewBox="0 0 320 120"><text x="30" y="16" font-size="11" fill="#3ecf8e" font-family="Barlow Condensed,sans-serif" font-weight="700">SOFT (1)</text><path d="M55 22 L55 27 L40 33 L70 40 L40 47 L70 54 L40 61 L70 68 L55 74 L55 80" stroke="#3ecf8e" stroke-width="2.2" fill="none" stroke-linecap="round"/><text x="165" y="16" font-size="11" fill="#ff6b35" font-family="Barlow Condensed,sans-serif" font-weight="700">STIFF (5)</text><path d="M195 22 L195 27 L180 31 L210 35 L180 39 L210 43 L180 47 L210 51 L195 55 L195 80" stroke="#ff6b35" stroke-width="2.2" fill="none" stroke-linecap="round"/><text x="38" y="105" font-size="10" fill="#3ecf8e" font-family="Barlow,sans-serif">more body roll</text><text x="162" y="105" font-size="10" fill="#ff6b35" font-family="Barlow,sans-serif">less body roll</text></svg>',
     effects: [
-      { cls:'blue', title:'Stiffer springs (higher value)', desc:'The car stays flat — great for downforce cars since aero only works when the platform is stable. Faster response to steering inputs. But hits curbs hard and can skip over bumps.' },
-      { cls:'orange', title:'Softer springs (lower value)', desc:'More comfortable over bumps and curbs. The car rolls and pitches more in corners which reduces the effectiveness of downforce. Can feel floaty at speed.' }
+      { cls:'blue', title:'Stiffer springs (higher value)', desc:'Reduces body roll in corners. The car stays flatter — great for downforce cars.' },
+      { cls:'orange', title:'Softer springs (lower value)', desc:'More body roll and more comfortable over bumps, but can feel loose in fast corners.' }
     ],
-    tip: '<strong>Beginner tip:</strong> High-downforce cars need stiffer springs (2.0–3.5) to use their aero. Normal road cars feel better softer (1.0–2.0). Always match your damping to match (see Damping).'
+    tip: '<strong>Beginner tip:</strong> Stock stiffness is 3. 5 is ~40% stiffer, 1 is ~40% softer. Higher stiffness = less body roll.'
   },
+
   damping: {
     title: "Damping",
-    sub: "How quickly suspension settles after a hit",
+    sub: "How quickly the suspension settles after a hit",
     iconClass: "ic-purple",
     iconSvg: '<svg width="26" height="26" viewBox="0 0 22 22"><rect x="8" y="2" width="6" height="9" rx="1.5" fill="#a78bfa"/><rect x="5" y="14" width="12" height="4" rx="1.5" fill="#7c5cdb"/><line x1="11" y1="11" x2="11" y2="14" stroke="#a78bfa" stroke-width="2.5"/></svg>',
-    diagram: '<svg width="320" height="120" viewBox="0 0 320 120"><text x="18" y="16" font-size="11" fill="#ff4d4d" font-family="Barlow Condensed,sans-serif" font-weight="700">LOW DAMPING</text><polyline points="35,30 65,75 58,40 75,72 68,42 85,70" stroke="#ff4d4d" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="18" y="105" font-size="10" fill="#ff4d4d" font-family="Barlow,sans-serif">keeps bouncing</text><text x="175" y="16" font-size="11" fill="#3ecf8e" font-family="Barlow Condensed,sans-serif" font-weight="700">HIGH DAMPING</text><polyline points="195,30 225,75 228,58 226,62 225,64" stroke="#3ecf8e" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="175" y="105" font-size="10" fill="#3ecf8e" font-family="Barlow,sans-serif">settles quickly</text></svg>',
     effects: [
-      { cls:'blue', title:'Higher damping', desc:'Suspension absorbs the hit and stops bouncing immediately. The chassis feels planted and settled. Fixes the chassis shake or jelly effect you get under power. Essential for stiff setups.' },
-      { cls:'orange', title:'Too low damping for your stiffness', desc:'The spring bounces back faster than the damper can absorb it. The car wobbles, the chassis visibly shakes under acceleration, and curbs send the car airborne.' }
+      { cls:'blue', title:'Higher damping', desc:'The car settles faster after bumps or jumps. Reduces bouncing and chassis shake under power.' },
+      { cls:'orange', title:'Too low damping for your stiffness', desc:'The car can keep bouncing or feel wobbly.' }
     ],
-    tip: '<strong>Beginner tip:</strong> Damping should be roughly 85–95% of your stiffness value. Stiffness 2.5 → aim for damping 2.2–2.4. If the car shakes, raise damping first.'
+    tip: '<strong>Beginner tip:</strong> Best to set damping roughly equal to your stiffness value. Example: Stiffness 2.5 → Damping 2.3–2.6. Only adjust further if the car feels bouncy or too stiff.'
   },
+
   height: {
     title: "Ride Height",
-    sub: "How high the chassis sits from the ground",
+    sub: "Spring length — how low the car sits",
     iconClass: "ic-green",
     iconSvg: '<svg width="26" height="26" viewBox="0 0 22 22"><rect x="2" y="16" width="18" height="4" rx="1.5" fill="#1d9e75"/><rect x="8" y="7" width="6" height="9" rx="1.5" fill="#3ecf8e"/><line x1="5" y1="7" x2="17" y2="7" stroke="#3ecf8e" stroke-width="1.8"/></svg>',
-    diagram: '<svg width="320" height="110" viewBox="0 0 320 110"><rect x="0" y="90" width="320" height="8" rx="2" fill="#2a2d35"/><rect x="20" y="62" width="100" height="26" rx="4" fill="#1d9e75"/><text x="70" y="79" font-size="10" fill="#fff" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="700">LOW</text><line x1="70" y1="88" x2="70" y2="90" stroke="#3ecf8e" stroke-width="2"/><line x1="25" y1="62" x2="25" y2="90" stroke="#3ecf8e" stroke-width="1" stroke-dasharray="3,2"/><text x="15" y="58" font-size="10" fill="#3ecf8e" font-family="Barlow,sans-serif">small gap</text><rect x="180" y="38" width="100" height="26" rx="4" fill="#f5c518" opacity="0.85"/><text x="230" y="55" font-size="10" fill="#1a1200" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="700">HIGH</text><line x1="230" y1="64" x2="230" y2="90" stroke="#f5c518" stroke-width="2"/><line x1="185" y1="38" x2="185" y2="90" stroke="#f5c518" stroke-width="1" stroke-dasharray="3,2"/><text x="175" y="34" font-size="10" fill="#f5c518" font-family="Barlow,sans-serif">large gap</text></svg>',
     effects: [
-      { cls:'blue', title:'Lower ride height', desc:'Centre of gravity drops — less body roll, sharper handling. Aero works better when closer to the ground. Less suspension travel though, so curbs and kerbs become a problem.' },
-      { cls:'orange', title:'Higher ride height', desc:'More suspension travel for bumps. But the centre of gravity rises, the car rolls more, and downforce efficiency drops. Can cause understeer if raised too much at the front.' }
+      { cls:'blue', title:'Lower ride height', desc:'Lowers center of gravity → less body roll and sharper handling. Aero works better when closer to the ground.' },
+      { cls:'orange', title:'Higher ride height', desc:'More suspension travel for big bumps, but more body roll and worse handling.' }
     ],
-    tip: '<strong>Beginner tip:</strong> Find the lowest height that doesn\'t bounce off kerbs. 0.03–0.08 is a typical range. Raise the front 0.01–0.02 more than rear to avoid front understeer.'
+    tip: '<strong>Beginner tip:</strong> Lower = better handling (until you bottom out on curbs). Most cars feel good between 0.04–0.08. Raise the front slightly more than the rear if you have understeer.'
   },
+
   diff_power: {
     title: "Diff Power",
     sub: "Rear differential locking under acceleration",
     iconClass: "ic-orange",
     iconSvg: '<svg width="26" height="26" viewBox="0 0 22 22"><circle cx="11" cy="11" r="5" fill="none" stroke="#ff6b35" stroke-width="1.8"/><line x1="1" y1="11" x2="6" y2="11" stroke="#ff6b35" stroke-width="2.2"/><line x1="16" y1="11" x2="21" y2="11" stroke="#ff6b35" stroke-width="2.2"/></svg>',
-    diagram: '<svg width="320" height="110" viewBox="0 0 320 110"><text x="10" y="16" font-size="11" fill="#3ecf8e" font-family="Barlow Condensed,sans-serif" font-weight="700">LOW — OPEN DIFF</text><circle cx="65" cy="62" r="24" fill="none" stroke="#3ecf8e" stroke-width="1.8"/><line x1="22" y1="62" x2="41" y2="62" stroke="#3ecf8e" stroke-width="2.2"/><line x1="89" y1="62" x2="108" y2="62" stroke="#7a7f8e" stroke-width="2.2"/><text x="48" y="66" font-size="10" fill="#3ecf8e" font-family="Barlow,sans-serif">spins</text><text x="170" y="16" font-size="11" fill="#ff6b35" font-family="Barlow Condensed,sans-serif" font-weight="700">HIGH — LOCKED</text><circle cx="245" cy="62" r="24" fill="none" stroke="#ff6b35" stroke-width="1.8"/><line x1="202" y1="62" x2="221" y2="62" stroke="#ff6b35" stroke-width="2.2"/><line x1="269" y1="62" x2="288" y2="62" stroke="#ff6b35" stroke-width="2.2"/><text x="224" y="66" font-size="10" fill="#ff6b35" font-family="Barlow,sans-serif">locked</text><text x="10" y="100" font-size="10" fill="#3ecf8e" font-family="Barlow,sans-serif">more rotation on exit</text><text x="170" y="100" font-size="10" fill="#ff6b35" font-family="Barlow,sans-serif">more traction on exit</text></svg>',
+    diagram: '<svg width="320" height="110" viewBox="0 0 320 110"><text x="10" y="16" font-size="11" fill="#3ecf8e" font-family="Barlow Condensed,sans-serif" font-weight="700">LOW — OPEN DIFF</text><circle cx="65" cy="62" r="24" fill="none" stroke="#3ecf8e" stroke-width="1.8"/><line x1="22" y1="62" x2="41" y2="62" stroke="#3ecf8e" stroke-width="2.2"/><line x1="89" y1="62" x2="108" y2="62" stroke="#7a7f8e" stroke-width="2.2"/><text x="170" y="16" font-size="11" fill="#ff6b35" font-family="Barlow Condensed,sans-serif" font-weight="700">HIGH — LOCKED</text><circle cx="245" cy="62" r="24" fill="none" stroke="#ff6b35" stroke-width="1.8"/><line x1="202" y1="62" x2="221" y2="62" stroke="#ff6b35" stroke-width="2.2"/><line x1="269" y1="62" x2="288" y2="62" stroke="#ff6b35" stroke-width="2.2"/></svg>',
     effects: [
-      { cls:'blue', title:'Higher value (more locking on power)', desc:'Both rear wheels pull together under acceleration. Better traction coming out of corners. If set too high, the car understeers (pushes wide) on corner exit because it can\'t rotate.' },
-      { cls:'orange', title:'Lower value (more open on power)', desc:'Each wheel can spin at different speeds. More rotation out of corners — but the inside wheel can spin and waste traction. Too low and exit feels loose.' }
+      { cls:'blue', title:'Higher value', desc:'Better traction coming out of corners.' },
+      { cls:'orange', title:'Lower value', desc:'More rotation out of corners but can lose traction.' }
     ],
-    tip: '<strong>Beginner tip:</strong> 15–30 is a good starting range. If the car pushes wide on exit, lower it. If the inside wheel spins too much on exit, raise it.'
+    tip: '<strong>Beginner tip:</strong> 15–30 is a good starting range. For 1-way LSD keep this higher and coast lower. For 2-way LSD balance both.'
   },
+
   diff_coast: {
     title: "Diff Coast",
     sub: "Rear differential locking when off throttle",
     iconClass: "ic-orange",
     iconSvg: '<svg width="26" height="26" viewBox="0 0 22 22"><circle cx="11" cy="11" r="5" fill="none" stroke="#ff6b35" stroke-width="1.8" stroke-dasharray="3,2"/><line x1="1" y1="11" x2="6" y2="11" stroke="#ff6b35" stroke-width="2.2"/><line x1="16" y1="11" x2="21" y2="11" stroke="#ff6b35" stroke-width="2.2"/></svg>',
-    diagram: '<svg width="320" height="110" viewBox="0 0 320 110"><text x="10" y="16" font-size="11" fill="#4a9eff" font-family="Barlow Condensed,sans-serif" font-weight="700">LOW COAST</text><path d="M25 50 Q60 22 95 50" stroke="#4a9eff" stroke-width="2.2" fill="none" stroke-linecap="round"/><polygon points="90,46 95,50 90,54" fill="#4a9eff"/><text x="10" y="90" font-size="10" fill="#4a9eff" font-family="Barlow,sans-serif">car rotates freely on lift-off</text><text x="175" y="16" font-size="11" fill="#ff6b35" font-family="Barlow Condensed,sans-serif" font-weight="700">HIGH COAST</text><line x1="190" y1="50" x2="295" y2="50" stroke="#ff6b35" stroke-width="3" stroke-linecap="round"/><text x="175" y="90" font-size="10" fill="#ff6b35" font-family="Barlow,sans-serif">rear stays stable on lift-off</text></svg>',
     effects: [
-      { cls:'blue', title:'Higher coast (more locking off throttle)', desc:'When you lift off the throttle entering a corner, the rear stays planted and helps rotate the car in. Very effective for trail braking. Too high and the rear snaps or over-rotates on entry.' },
-      { cls:'orange', title:'Lower coast (more open off throttle)', desc:'Rear wheels decelerate independently on lift-off. Feels neutral and predictable. Less rotation on corner entry — the car waits for you to steer rather than helping rotate itself in.' }
+      { cls:'blue', title:'Higher coast', desc:'Helps the car rotate on lift-off (good for trail braking).' },
+      { cls:'orange', title:'Lower coast', desc:'More neutral and predictable on entry.' }
     ],
-    tip: '<strong>Beginner tip:</strong> Start around 10–15. If you want more corner entry rotation when you lift off, increase it. If the rear feels snappy or unpredictable, lower it.'
+    tip: '<strong>Beginner tip:</strong> Start around 10–15. For 1.5-way or 2-way LSDs you can run higher coast values.'
   },
+
   diff_preload: {
     title: "Diff Preload",
     sub: "Baseline locking force before throttle or coast kicks in",
     iconClass: "ic-orange",
     iconSvg: '<svg width="26" height="26" viewBox="0 0 22 22"><circle cx="11" cy="11" r="5" fill="#2a1508" stroke="#ff6b35" stroke-width="1.8"/><circle cx="11" cy="11" r="2" fill="#ff6b35"/><line x1="1" y1="11" x2="6" y2="11" stroke="#ff6b35" stroke-width="2.2"/><line x1="16" y1="11" x2="21" y2="11" stroke="#ff6b35" stroke-width="2.2"/></svg>',
-    diagram: '<svg width="320" height="110" viewBox="0 0 320 110"><text x="50" y="20" font-size="12" fill="#7a7f8e" font-family="Barlow Condensed,sans-serif" font-weight="700">HOW PRELOAD WORKS</text><rect x="20" y="35" width="80" height="30" rx="4" fill="#1e2128" stroke="#2a2d35" stroke-width="1"/><text x="60" y="54" font-size="10" fill="#7a7f8e" text-anchor="middle" font-family="Barlow,sans-serif">Low preload</text><text x="60" y="80" font-size="10" fill="#ff6b35" font-family="Barlow,sans-serif" text-anchor="middle">slow to respond</text><rect x="120" y="35" width="80" height="30" rx="4" fill="#2a1508" stroke="#ff6b35" stroke-width="1"/><text x="160" y="54" font-size="10" fill="#ff6b35" text-anchor="middle" font-family="Barlow,sans-serif">High preload</text><text x="160" y="80" font-size="10" fill="#ff6b35" font-family="Barlow,sans-serif" text-anchor="middle">instant response</text><rect x="220" y="35" width="80" height="30" rx="4" fill="#2a0808" stroke="#ff4d4d" stroke-width="1"/><text x="260" y="54" font-size="10" fill="#ff4d4d" text-anchor="middle" font-family="Barlow,sans-serif">Too high</text><text x="260" y="80" font-size="10" fill="#ff4d4d" font-family="Barlow,sans-serif" text-anchor="middle">twitchy always</text></svg>',
     effects: [
-      { cls:'blue', title:'Higher preload', desc:'The diff is already partially engaged before you hit the throttle or lift off. The diff response feels instant and snappy. Useful for very fast transitions.' },
-      { cls:'orange', title:'Too high preload', desc:'The diff acts locked all the time, even when you don\'t want it to. Makes the car twitchy mid-corner and can cause instability even at neutral throttle.' }
+      { cls:'blue', title:'Higher preload', desc:'Diff responds more instantly.' },
+      { cls:'orange', title:'Too high preload', desc:'Can make the car twitchy mid-corner.' }
     ],
-    tip: '<strong>Beginner tip:</strong> Keep preload low (3–8). It\'s a fine-tuning dial, not a main setting. Let diff power and coast do the heavy work.'
+    tip: '<strong>Beginner tip:</strong> Keep preload low (3–8). It is a fine-tuning dial.'
   },
+
   torque_vector: {
     title: "Torque Vectoring",
-    sub: "Front-to-rear power distribution bias",
+    sub: "Front-to-rear power distribution bias (AWD only)",
     iconClass: "ic-orange",
     iconSvg: '<svg width="26" height="26" viewBox="0 0 22 22"><path d="M3 11 Q11 3 19 11" stroke="#ff6b35" stroke-width="2" fill="none" stroke-linecap="round"/><polygon points="17,8 19,11 17,14" fill="#ff6b35"/></svg>',
-    diagram: '<svg width="320" height="110" viewBox="0 0 320 110"><rect x="100" y="38" width="90" height="34" rx="5" fill="#2a1508" stroke="#ff6b35" stroke-width="1.2"/><text x="145" y="59" font-size="11" fill="#ff6b35" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="700">ENGINE</text><line x1="30" y1="55" x2="100" y2="55" stroke="#7a7f8e" stroke-width="1.8" stroke-dasharray="4,2"/><line x1="190" y1="55" x2="265" y2="55" stroke="#ff6b35" stroke-width="2.8"/><polygon points="260,50 265,55 260,60" fill="#ff6b35"/><text x="20" y="50" font-size="10" fill="#7a7f8e" font-family="Barlow,sans-serif">front</text><text x="220" y="42" font-size="10" fill="#ff6b35" font-family="Barlow,sans-serif">rear bias</text><text x="20" y="85" font-size="10" fill="#7a7f8e" font-family="Barlow,sans-serif">less drive to front</text><text x="190" y="85" font-size="10" fill="#ff6b35" font-family="Barlow,sans-serif">more drive to rear</text></svg>',
     effects: [
-      { cls:'blue', title:'Positive value (rear bias)', desc:'More power is pushed to the rear during cornering. The rear works harder, the car rotates more naturally. Too much and the rear steps out under power.' },
-      { cls:'orange', title:'Near zero or negative', desc:'Power is more evenly spread or front-biased. Reduces rotation, adds stability. Useful if the car is too snappy or for AWD setups that need front pull.' }
+      { cls:'blue', title:'Positive value (rear bias)', desc:'More power to the rear → more rotation.' },
+      { cls:'orange', title:'Near zero or negative', desc:'More even or front-biased power → more stability.' }
     ],
-    tip: '<strong>Beginner tip:</strong> 0.20–0.35 is a safe range for rear-biased rotation. If the car snaps mid-corner, lower it toward 0.15–0.20.'
+    tip: '<strong>Note:</strong> Torque Vectoring is AWD exclusive. It splits power between the front and rear differentials.'
   },
+
   steering_ratio: {
     title: "Steering Ratio",
-    sub: "How much the wheels turn per degree of steering input",
+    sub: "How much the wheel turns per degree of input",
     iconClass: "ic-blue",
     iconSvg: '<svg width="26" height="26" viewBox="0 0 22 22"><circle cx="11" cy="11" r="8" fill="none" stroke="#4a9eff" stroke-width="1.8"/><line x1="11" y1="3" x2="11" y2="8" stroke="#4a9eff" stroke-width="2.2"/><circle cx="11" cy="11" r="2.5" fill="#4a9eff"/></svg>',
-    diagram: '<svg width="320" height="110" viewBox="0 0 320 110"><text x="14" y="16" font-size="11" fill="#ff6b35" font-family="Barlow Condensed,sans-serif" font-weight="700">LOW RATIO — FAST</text><circle cx="65" cy="62" r="28" fill="none" stroke="#ff6b35" stroke-width="1.8"/><line x1="65" y1="34" x2="65" y2="48" stroke="#ff6b35" stroke-width="2.2"/><path d="M48 70 Q65 56 82 70" stroke="#ff6b35" stroke-width="1.8" fill="none"/><text x="14" y="105" font-size="10" fill="#ff6b35" font-family="Barlow,sans-serif">twitchy, reactive</text><text x="175" y="16" font-size="11" fill="#4a9eff" font-family="Barlow Condensed,sans-serif" font-weight="700">HIGH RATIO — SLOW</text><circle cx="250" cy="62" r="28" fill="none" stroke="#4a9eff" stroke-width="1.8"/><line x1="250" y1="34" x2="250" y2="48" stroke="#4a9eff" stroke-width="2.2"/><path d="M222 70 Q250 56 278 70" stroke="#4a9eff" stroke-width="1.8" fill="none"/><text x="175" y="105" font-size="10" fill="#4a9eff" font-family="Barlow,sans-serif">stable, predictable</text></svg>',
     effects: [
-      { cls:'blue', title:'Lower ratio (8–12)', desc:'Small steering input = big wheel movement. Very reactive and responsive. Can feel twitchy or nervous at high speed — small corrections can send the car sideways.' },
-      { cls:'orange', title:'Higher ratio (16–28)', desc:'You need more steering input to achieve the same turn. Feels more relaxed and stable. Better for beginners as it reduces the chance of over-correcting.' }
+      { cls:'blue', title:'Lower ratio (8–12)', desc:'Very reactive and responsive.' },
+      { cls:'orange', title:'Higher ratio (16–28)', desc:'More relaxed and stable.' }
     ],
-    tip: '<strong>Beginner tip:</strong> 10–14 is a good middle ground. If the car feels too twitchy, raise it. If the car feels slow to respond and lazy, lower it.'
+    tip: '<strong>Beginner tip:</strong> 10–14 is a good middle ground.'
   },
+
   lock_to_lock: {
     title: "Lock to Lock",
-    sub: "Steering wheel turns from full left to full right",
+    sub: "Steering wheel turns from full left to full right + max wheel angle",
     iconClass: "ic-blue",
     iconSvg: '<svg width="26" height="26" viewBox="0 0 22 22"><circle cx="11" cy="11" r="8" fill="none" stroke="#4a9eff" stroke-width="1.8"/><path d="M5 11 A6 6 0 0 1 17 11" stroke="#4a9eff" stroke-width="2" fill="none" stroke-linecap="round"/></svg>',
-    diagram: '<svg width="320" height="110" viewBox="0 0 320 110"><text x="50" y="20" font-size="12" fill="#7a7f8e" font-family="Barlow Condensed,sans-serif" font-weight="700">LOCK TO LOCK TURNS</text><text x="45" y="55" font-size="28" fill="#ff6b35" font-family="Barlow Condensed,sans-serif" font-weight="800">1.5</text><text x="88" y="55" font-size="13" fill="#7a7f8e" font-family="Barlow,sans-serif">turns</text><text x="60" y="75" font-size="11" fill="#ff6b35" font-family="Barlow,sans-serif">very fast / twitchy</text><text x="180" y="55" font-size="28" fill="#4a9eff" font-family="Barlow Condensed,sans-serif" font-weight="800">3.5</text><text x="223" y="55" font-size="13" fill="#7a7f8e" font-family="Barlow,sans-serif">turns</text><text x="185" y="75" font-size="11" fill="#4a9eff" font-family="Barlow,sans-serif">slow / relaxed</text></svg>',
     effects: [
-      { cls:'blue', title:'Fewer turns (1.5–2.0)', desc:'You reach full lock very quickly. Fast and direct. Racing and formula cars use low values. Requires precise hands — small mistakes are amplified.' },
-      { cls:'orange', title:'More turns (2.5–3.5)', desc:'You need to rotate the wheel more to reach full lock. Slower and more relaxed. More forgiving for beginners. Touring and road cars typically use higher values.' }
+      { cls:'blue', title:'Fewer turns (1.5–2.0)', desc:'Fast and direct.' },
+      { cls:'orange', title:'More turns (2.5–3.5)', desc:'Slower and more relaxed.' }
     ],
-    tip: '<strong>Beginner tip:</strong> 2.5–3.0 is comfortable for most builds. Pair this with your steering ratio — a high ratio with many turns = very relaxed. Low ratio with few turns = very reactive.'
+    tip: '<strong>Beginner tip:</strong> 2.5–3.0 is comfortable for most builds. On controller you may want to max this out because it also controls the total maximum steering angle of the wheels.'
   },
+
   gear_ratios: {
     title: "Gear Ratios",
     sub: "Top speed and acceleration spread per gear",
     iconClass: "ic-green",
     iconSvg: '<svg width="26" height="26" viewBox="0 0 22 22"><circle cx="8" cy="8" r="5" fill="none" stroke="#3ecf8e" stroke-width="1.8"/><circle cx="15" cy="15" r="4" fill="none" stroke="#3ecf8e" stroke-width="1.8"/><line x1="11" y1="11" x2="12" y2="12" stroke="#3ecf8e" stroke-width="1.5"/></svg>',
-    diagram: '<svg width="320" height="110" viewBox="0 0 320 110"><text x="10" y="16" font-size="11" fill="#7a7f8e" font-family="Barlow Condensed,sans-serif" font-weight="700">GEAR RATIO VALUE vs EFFECT</text><rect x="10" y="28" width="55" height="60" rx="3" fill="#1d9e75" opacity="0.8"/><text x="37" y="52" font-size="10" fill="#fff" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="700">3.10</text><text x="37" y="64" font-size="9" fill="#9fe1cb" text-anchor="middle" font-family="Barlow,sans-serif">1st</text><text x="37" y="78" font-size="9" fill="#9fe1cb" text-anchor="middle" font-family="Barlow,sans-serif">accel</text><rect x="72" y="38" width="45" height="50" rx="3" fill="#1d9e75" opacity="0.7"/><text x="94" y="62" font-size="10" fill="#fff" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="700">2.28</text><text x="94" y="74" font-size="9" fill="#9fe1cb" text-anchor="middle" font-family="Barlow,sans-serif">2nd</text><rect x="124" y="48" width="40" height="40" rx="3" fill="#1d9e75" opacity="0.6"/><text x="144" y="72" font-size="10" fill="#fff" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="700">1.78</text><rect x="171" y="56" width="35" height="32" rx="3" fill="#1d9e75" opacity="0.5"/><text x="188" y="76" font-size="10" fill="#fff" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="700">1.42</text><rect x="213" y="63" width="30" height="25" rx="3" fill="#1d9e75" opacity="0.4"/><text x="228" y="79" font-size="10" fill="#fff" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="700">1.18</text><rect x="250" y="70" width="25" height="18" rx="3" fill="#1d9e75" opacity="0.3"/><text x="262" y="82" font-size="9" fill="#fff" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="700">0.91</text><text x="10" y="105" font-size="10" fill="#7a7f8e" font-family="Barlow,sans-serif">Higher ratio = more acceleration. Lower ratio = higher top speed.</text></svg>',
     effects: [
-      { cls:'blue', title:'Higher ratio number (e.g. 3.10 in 1st)', desc:'More torque multiplication — the engine pulls harder but runs out of that gear quickly. Low gears always have higher ratios for launch acceleration.' },
-      { cls:'orange', title:'Lower ratio number (e.g. 0.91 in 6th)', desc:'Less multiplication but the gear can reach a much higher top speed before the engine runs out of revs. Top gears are always low ratio numbers.' }
+      { cls:'blue', title:'Higher ratio number', desc:'More acceleration but shorter gears.' },
+      { cls:'orange', title:'Lower ratio number', desc:'Higher top speed but less acceleration per gear.' }
     ],
-    tip: '<strong>Beginner tip:</strong> If the car can\'t hit its top speed, the gear steps are probably too far apart. Tighten the gaps between gears and check your final drive setting.'
+    tip: '<strong>Beginner tip:</strong> If the car can\'t hit its top speed, tighten the gaps between gears. RCD torque curves mostly match real-life cars, so you can tune your gears accordingly.'
   },
+
   final_drive: {
     title: "Final Drive",
-    sub: "Overall multiplier between gearbox and wheels",
+    sub: "Overall multiplier between gearbox and wheels (in the differential)",
     iconClass: "ic-green",
     iconSvg: '<svg width="26" height="26" viewBox="0 0 22 22"><circle cx="7" cy="11" r="4" fill="none" stroke="#3ecf8e" stroke-width="1.8"/><circle cx="16" cy="11" r="5" fill="none" stroke="#3ecf8e" stroke-width="1.8"/></svg>',
-    diagram: '<svg width="320" height="110" viewBox="0 0 320 110"><text x="60" y="18" font-size="12" fill="#7a7f8e" font-family="Barlow Condensed,sans-serif" font-weight="700">FINAL DRIVE EFFECT</text><rect x="20" y="35" width="80" height="35" rx="4" fill="#1e2128" stroke="#3ecf8e" stroke-width="1"/><text x="60" y="57" font-size="11" fill="#3ecf8e" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="700">LOWER (2.8)</text><text x="60" y="88" font-size="10" fill="#3ecf8e" text-anchor="middle" font-family="Barlow,sans-serif">higher top speed</text><rect x="120" y="35" width="80" height="35" rx="4" fill="#1e2128" stroke="#f5c518" stroke-width="1"/><text x="160" y="57" font-size="11" fill="#f5c518" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="700">HIGHER (3.8)</text><text x="160" y="88" font-size="10" fill="#f5c518" text-anchor="middle" font-family="Barlow,sans-serif">more acceleration</text><rect x="220" y="35" width="80" height="35" rx="4" fill="#2a0808" stroke="#ff4d4d" stroke-width="1"/><text x="260" y="57" font-size="11" fill="#ff4d4d" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="700">TOO HIGH</text><text x="260" y="88" font-size="10" fill="#ff4d4d" text-anchor="middle" font-family="Barlow,sans-serif">never hits top speed</text></svg>',
     effects: [
-      { cls:'blue', title:'Lower final drive value', desc:'All gears are effectively taller — the car can reach higher top speeds but acceleration in each gear is reduced. Use when the car hits its top speed too quickly.' },
-      { cls:'orange', title:'Higher final drive value', desc:'All gears are shorter — stronger acceleration across the whole rev range but top speed is capped lower. Use for tracks with lots of tight corners.' }
+      { cls:'blue', title:'Lower final drive value', desc:'Higher top speed but reduced acceleration.' },
+      { cls:'orange', title:'Higher final drive value', desc:'Stronger acceleration but lower top speed.' }
     ],
-    tip: '<strong>Beginner tip:</strong> Final drive is the master multiplier for all your gear ratios. Change it when you want to shift the whole power delivery up or down without retuning every gear individually.'
+    tip: '<strong>Beginner tip:</strong> Changing final drive scales ALL gear speeds. Be careful. Many players prefer to leave it stock and only tune individual gear ratios.'
   }
 };
 
@@ -709,7 +650,7 @@ function openModal(key) {
   document.getElementById('mIcon').innerHTML = d.iconSvg;
   document.getElementById('mTitle').textContent = d.title;
   document.getElementById('mSub').textContent = d.sub;
-  document.getElementById('mDiagram').innerHTML = d.diagram;
+  document.getElementById('mDiagram').innerHTML = d.diagram || '';
   var ef = document.getElementById('mEffects');
   ef.innerHTML = '';
   d.effects.forEach(function(e) {
@@ -718,7 +659,7 @@ function openModal(key) {
     div.innerHTML = '<div class="effect-title">' + e.title + '</div><div class="effect-desc">' + e.desc + '</div>';
     ef.appendChild(div);
   });
-  document.getElementById('mTip').innerHTML = d.tip;
+  document.getElementById('mTip').innerHTML = d.tip || '';
   document.getElementById('overlay').classList.add('open');
   document.getElementById('overlay').scrollTop = 0;
 }
